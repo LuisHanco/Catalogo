@@ -21,3 +21,13 @@ previewBox.forEach(close =>{
   };
 });
 
+<<<<<<< HEAD
+=======
+
+
+document.getElementById('whatsappButton').addEventListener('click', function() {
+  const telefono = '+51953902124'; // Reemplaza con tu número de WhatsApp
+  const mensaje = `Quiero este carrito:\n\nImagen: ${document.getElementById('itemImage').src}\nPrecio: ${document.getElementById('itemPrice').innerText}`;
+  const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, '_blank');});
+>>>>>>> 424caa97d7cf2741d5fea77714cd2c8f45396996
