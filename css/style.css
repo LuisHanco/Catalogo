@@ -86,7 +86,7 @@ h2{
 body {
 	font-family: Arial, sans-serif;
 	text-align: center;
-	margin: 50px;
+	margin: 80px 10px;
 }
 
 
@@ -183,6 +183,9 @@ body {
 }
 
 @media (max-width: 768px) {
+
+
+	
     .navbar ul {
         display: none;
         flex-direction: column;
@@ -198,6 +201,7 @@ body {
     }
 
     .menu-toggle {
+		
         display: block;
         position: absolute;
         right: 20px;
