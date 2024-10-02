@@ -1,170 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-   <!-- font awesome cdn link  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-   <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
-
-   <!-- custom js file link  -->
-   <script src="js/script.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Product Design</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-   
-<div class="container">
-   <h3 class="title"> Nuestros Productos</h3>
+    <section class="products">
+        <h2>Nuestros Productos</h2>
+        <div class="all-products" id="product-list"></div>
+    </section>
 
-   <div class="products-container">
-      <div class="product" data-name="p-1">
-         <img src="images/01.png" alt="">
-         <h3>Edicion Especial</h3>
-         <div class="price">S/. 15.00</div>
-      </div>
+    <script>
+        // Array de productos
+        const products = [
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
 
-      <div class="product" data-name="p-2">
-         <img src="images/02.png" alt="">
-         <h3>Edicion Especial</h3>
-         <div class="price">S/. 15.00</div>
-      </div>
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
+            {
+                title: "Super Coleccion",
+                price: "S/. 15.00",
+                img: "https://scontent.faqp3-1.fna.fbcdn.net/v/t39.30808-6/461856629_122093885402564075_6079180204165511480_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErpS-Mju6RiGL49mJAKSbyxyL8GCOYMAjHIvwYI5gwCHC3OnZDWIxiKKNbIdt_rxZYTl1ifUbW4h6ry-gw45kD&_nc_ohc=2uLjXlvxSgMQ7kNvgGNK5Xp&_nc_ht=scontent.faqp3-1.fna&_nc_gid=A7slH8hY1pgJFGZpEv15ER_&oh=00_AYBppfdJnwcA_7-LssGzSkCn78aK8NNUi_Dl1wgX2QkRhA&oe=670292FB"
+            },
+            // Agrega más productos aquí
+        ];
 
-      <div class="product" data-name="p-3">
-         <img src="images/03.png" alt="">
-         <h3>Edicion Especial</h3>
-         <div class="price">S/. 15.00</div>
-      </div>
+        // Función para generar productos
+        function displayProducts() {
+            const productList = document.getElementById('product-list');
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                productDiv.innerHTML = `
+                    <img src="${product.img}" alt="${product.title}">
+                    <div class="product-info">
+                        <h4 class="product-title">${product.title}</h4>
+                        <p class="product-price">${product.price}</p>
+                        <a class="product-btn" href="https://wa.me/?text=¡Hola!%20Estoy%20interesado%20en%20${encodeURIComponent(product.title)}%20-%20Precio:%20${encodeURIComponent(product.price)}.%20Aquí%20está%20la%20imagen:%20${encodeURIComponent(product.img)}" target="_blank">Pedir Ahora</a>
+                    </div>
+                `;
+                productList.appendChild(productDiv);
+            });
+        }
 
-      <div class="product" data-name="p-4">
-         <img src="images/04.png" alt="">
-         <h3>Edicion Especial</h3>
-         <div class="price">S/. 15.00</div>
-      </div>
-
-      <div class="product" data-name="p-5">
-         <img src="images/05.png" alt="">
-         <h3>Edicion Especial</h3>
-         <div class="price">S/. 15.00</div>
-      </div>
-
-      <div class="product" data-name="p-6">
-         <img src="images/06.png" alt="">
-         <h3>Edicion Especial</h3>
-         <div class="price">S/. 15.00</div>
-      </div>
-
-      <!-- Añadir más productos según sea necesario -->
-   </div>
-</div>
-
-<div class="products-preview">
-   <div class="preview" data-target="p-1">
-      <i class="fas fa-times"></i>
-      <img src="images/01.png" alt="">
-      <h3>Edicion Especial</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-      </div>
-      <div class="price">S/. 15.00</div>
-      <div class="buttons">
-         <a href="#" class="buy" onclick="hacerPedido('images/01.png', 'S/. 15.00')">Pedir Ahora</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-2">
-      <i class="fas fa-times"></i>
-      <img src="images/02.png" alt="">
-      <h3>Edicion Especial</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-      </div>
-      <div class="price">S/. 15.00</div>
-      <div class="buttons">
-         <a href="#" class="buy" onclick="hacerPedido('https://scontent.ftnm1-1.fna.fbcdn.net/v/t39.30808-6/461832012_122093815388564075_6799212290185867810_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=f727a1&_nc_ohc=W2-oosuGJV0Q7kNvgH9Lq_m&_nc_ht=scontent.ftnm1-1.fna&_nc_gid=Ac7Dg_S0hCPFlKauznfHXb8&oh=00_AYDEBhEo2lB-IVwza-hZS61lBxkU7jBCM6QOfxdZ_Ywv4w&oe=6701FE90', 'S/. 15.00')">Pedir Ahora</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-3">
-      <i class="fas fa-times"></i>
-      <img src="images/03.png" alt="">
-      <h3>Edicion Especial</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-      </div>
-      <div class="price">S/. 15.00</div>
-      <div class="buttons">
-         <a href="#" class="buy" onclick="hacerPedido('images/03.png', 'S/. 15.00')">Pedir Ahora</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-4">
-      <i class="fas fa-times"></i>
-      <img src="images/04.png" alt="">
-      <h3>Edicion Especial</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-      </div>
-      <div class="price">S/. 15.00</div>
-      <div class="buttons">
-         <a href="#" class="buy" onclick="hacerPedido('images/04.png', 'S/. 15.00')">Pedir Ahora</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-5">
-      <i class="fas fa-times"></i>
-      <img src="images/05.png" alt="">
-      <h3>Edicion Especial</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-      </div>
-      <div class="price">S/. 15.00</div>
-      <div class="buttons">
-         <a href="#" class="buy" onclick="hacerPedido('images/05.png', 'S/. 15.00')">Pedir Ahora</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-6">
-      <i class="fas fa-times"></i>
-      <img src="images/06.png" alt="">
-      <h3>Edicion Especial</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-      </div>
-      <div class="price">S/. 15.00</div>
-      <div class="buttons">
-         <a href="#" class="buy" onclick="hacerPedido('images/06.png', 'S/. 15.00')">Pedir Ahora</a>
-      </div>
-   </div>
-</div>
-
-
-
+        // Llamar a la función para mostrar productos
+        displayProducts();
+    </script>
 </body>
 </html>
