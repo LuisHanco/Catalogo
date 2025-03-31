@@ -53,14 +53,14 @@ body{
 svg path {
   fill: transparent;
   stroke: #fff;
-  stroke-width: 0.1;
-  stroke-dasharray: 50;
-  stroke-dashoffset: 50;
+  /* stroke-width: 0.1; */
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
   animation: textAnimation 4s ease-in-out 1 forwards;
 }
 @keyframes textAnimation {
   0% {
-    stroke-dashoffset: 50;
+    stroke-dashoffset: 240;
   }
   80% {
     fill: transparent;
