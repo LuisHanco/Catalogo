@@ -81,7 +81,7 @@ function checkPassword() {
   let password = document.getElementById("password").value.toLowerCase();
   let hintText = document.getElementById("hint");
   if (password === "niña") {
-      window.location.href = "teamo.html";
+      window.location.href = "asset/animation-svg-css/index.html";
   } else {
       if (hintIndex < hints.length) {
           hintText.textContent = hints[hintIndex];
