@@ -6,8 +6,14 @@
 }
 body {
   background-color: #f4c531;
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 .container {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   height: 31.25em;
   width: 31.25em;
   position: absolute;
@@ -16,6 +22,7 @@ body {
   left: 50%;
 }
 .form {
+ 
   width: 23.75em;
   height: 18.75em;
   background-color: #ffffff;
@@ -29,13 +36,36 @@ body {
   justify-content: center;
   border-radius: 0.5em;
 }
+
+.form h2{
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.form p{
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 15px;
+  text-align: center;
+}
+
 .form label {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   display: block;
   margin-bottom: 0.2em;
   font-weight: 600;
   color: #2e0d30;
 }
 .form input {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 0.95em;
   font-weight: 400;
   color: #3f3554;
@@ -51,10 +81,19 @@ body {
   margin-bottom: 0.9em;
 }
 .form button {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 0.95em;
   padding: 0.8em 0;
-  border-radius: 2em;
-  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border-top: black 3px solid;
+  border-bottom: black 7px solid;
+  border-right: black 3px solid;
+  border-left: black 3px solid;
+  transition: all 0.2s ease;
   outline: none;
   background-color: #f4c531;
   color: #2e0d30;
@@ -63,6 +102,17 @@ body {
   letter-spacing: 0.15em;
   margin-top: 0.8em;
 }
+
+button:active {
+  box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.3); /* Efecto de hundimiento */
+  transform: scale(0.98); /* Reduce ligeramente el botón */
+  border-top-width: 7px; /* Borde superior más grueso */
+  border-bottom-width: 3px; /* Borde inferior más delgado */
+  border-right-width: 7px; /* Lado derecho más grueso */
+  border-left-width: 7px; /* Lado izquierdo más grueso */
+}
+
+
 .panda-face {
   height: 7.5em;
   width: 8.4em;
