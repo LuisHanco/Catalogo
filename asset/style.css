@@ -67,6 +67,9 @@ body{
     transition: 0s;
     background: var(--clr);
     color:#333;
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr),
+    0 0 50px var(--clr);
 }
 
 .toggleBtn{
@@ -78,8 +81,9 @@ body{
     align-items: center;
     z-index: 10000;
     cursor: pointer;
-    /* font-size: 2em; */
+    font-size: 2em;
     color:#fff;
+
 }
 
 .menu .toggleBtn ion-icon{
@@ -100,4 +104,12 @@ body{
     height: 6px;
     background: #fff;
     transition: 0.5s;
+}
+
+.menu.active .toggleBtn::before{
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 3px solid #fff;
+    box-sizing: border-box;
 }
