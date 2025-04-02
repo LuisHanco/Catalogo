@@ -12,6 +12,34 @@ body{
     background: black;
 }
 
+.caja{
+    /* background-color: red; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.caja a{
+    text-decoration: none;
+    color: white;
+}
+
+.caja p{
+    color: white;
+    font-family: "Dancing Script", cursive;
+}
+
+.container{
+    /* background: darkred; */
+}
+
 .menu{
     position: relative;
     width: 220px;
