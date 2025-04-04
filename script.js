@@ -80,7 +80,7 @@ let hintIndex = 0;
 function checkPassword() {
   let password = document.getElementById("password").value.toLowerCase();
   let hintText = document.getElementById("hint");
-  if (password === "niña") {
+  if (password === "teamo") {
       window.location.href = "asset/animation-svg-css/index.html";
   } else {
       if (hintIndex < hints.length) {
