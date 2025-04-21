@@ -37,11 +37,11 @@ function checkWin(key){
 
         
         if(oWin === true){
-            alertWin('O WIN');
+            alertWin('O Gano');
             return;
         }
         if(xWin === true){
-            alertWin('X WIN');
+            alertWin('X Gano');
             return;
         }
 
@@ -59,9 +59,9 @@ function checkWin(key){
 
         if(countX + countO == 9){
             if(countX > countO){
-                alertWin('X WIN');
+                alertWin('X Gano');
             }else{
-                alertWin('O WIN');
+                alertWin('O Gano');
             }
         }
     })

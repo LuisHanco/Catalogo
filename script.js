@@ -73,8 +73,8 @@ if (clickedElem != usernameRef && clickedElem != passwordRef) {
 
 let hints = [
   "Es una palabra corta.",
-  "Tiene cinco letras.",
-  "Es un sustantivo relacionado con la infancia."
+  "Tiene muchas letras.",
+  "Es algo que te digo del corazon."
 ];
 let hintIndex = 0;
 function checkPassword() {
